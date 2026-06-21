@@ -1,0 +1,193 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "D:/Block_tales_2D/maps/tiles/tsx/converted-Overworld.tsx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "D:/Block_tales_2D/maps/tiles/tsx/converted-Overworld.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "D:/Block_tales_2D/maps/tiles/tsx/converted-cave.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "D:/Block_tales_2D/maps/tiles/tsx/objects.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Overworld.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "cave_first_room.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "cave_second-room.tmx": {
+            "scale": 0.8846875,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 639.7739314729779,
+                "y": 480.395619922289
+            }
+        },
+        "first_town_yard.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "first_village_start.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 335.5139526669021
+            }
+        },
+        "fishing_spot.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "map1.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 344.2741080890145
+            }
+        },
+        "map2.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 335.5139526669021
+            }
+        },
+        "map3.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 335.5139526669021
+            }
+        },
+        "map4.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 335.5139526669021
+            }
+        },
+        "map5.tmx": {
+            "scale": 1.12,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 495.5357142857143,
+                "y": 335.71428571428567
+            }
+        },
+        "map6.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 335.5139526669021
+            }
+        },
+        "map7.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "map8.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "objects.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "starting_castle.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "starting_house.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        },
+        "starting_intersection.tmx": {
+            "scale": 1.1415322580645162,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 495.8247968915577,
+                "y": 336.38996820911336
+            }
+        }
+    },
+    "last.imagePath": "D:/Block_tales_2D/maps/tiles/tsx",
+    "map.height": 30,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 32,
+    "map.tileWidth": 32,
+    "map.width": 40,
+    "openFiles": [
+        "D:/Block_tales_2D/maps/tiles/tsx/converted-Overworld.tsx",
+        "D:/Block_tales_2D/maps/tiles/tsx/converted-cave.tsx"
+    ],
+    "project": "map1.tiled-project",
+    "recentFiles": [
+        "D:/Block_tales_2D/maps/tiles/tsx/converted-cave.tsx",
+        "D:/Block_tales_2D/maps/tiles/tsx/converted-Overworld.tsx",
+        "starting_castle.tmx",
+        "starting_intersection.tmx",
+        "starting_house.tmx",
+        "cave_second-room.tmx",
+        "cave_first_room.tmx",
+        "first_village_start.tmx",
+        "fishing_spot.tmx",
+        "first_town_yard.tmx",
+        "map8.tmx",
+        "map6.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 32,
+        "width": 32
+    },
+    "tileset.type": 0
+}
