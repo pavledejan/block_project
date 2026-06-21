@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Block Tales - Real Game",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/project/real_game.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
