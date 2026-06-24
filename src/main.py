@@ -15,7 +15,7 @@ class Player(pg.sprite.Sprite):
         self.y = y
         original_image = pg.image.load(
             "assets/images/player/player_idle.png").convert_alpha()
-        self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+        self.image = pg.transform.scale_by(original_image, 3.5)
         self.rect = self.image.get_rect(midbottom=(self.x, self.y))
 
         self.health = health
@@ -27,63 +27,63 @@ class Player(pg.sprite.Sprite):
         if which_animation_pl == "idle":
             original_image = pg.image.load(
                 "assets/images/player/player_idle.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "cure1":
             original_image = pg.image.load(
                 "assets/images/player/player_cure1.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "cure2":
             original_image = pg.image.load(
                 "assets/images/player/player_cure2.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "pass1":
             original_image = pg.image.load(
                 "assets/images/player/player_pass1.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "pass2":
             original_image = pg.image.load(
                 "assets/images/player/player_pass2.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "walk1":
             original_image = pg.image.load(
                 "assets/images/player/player_walk1.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "walk2":
             original_image = pg.image.load(
                 "assets/images/player/player_walk2.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "sword1":
             original_image = pg.image.load(
                 "assets/images/player/player_sword1.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
         elif which_animation_pl == "sword2":
             original_image = pg.image.load(
                 "assets/images/player/player_sword2.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             screen.blit(self.image, self.rect)
 
@@ -216,7 +216,7 @@ class Enemy(pg.sprite.Sprite):
         if self.enemy_type == "nooblet":
             original_image = pg.image.load(
                 "assets/images/nooblet/nooblet_idle.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             self.health = 2
             self.max_health = 2
@@ -224,7 +224,7 @@ class Enemy(pg.sprite.Sprite):
         if self.enemy_type == "noobador":
             original_image = pg.image.load(
                 "assets/images/noobador/noobador_idle.png").convert_alpha()
-            self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+            self.image = pg.transform.scale_by(original_image, 3.5)
             self.rect = self.image.get_rect(midbottom=(self.x, self.y))
             self.health = 15
             self.max_health = 15
@@ -235,86 +235,86 @@ class Enemy(pg.sprite.Sprite):
             if which_animation_en == "idle":
                 original_image = pg.image.load(
                     "assets/images/nooblet/nooblet_idle.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "walk1":
                 original_image = pg.image.load(
                     "assets/images/nooblet/nooblet_walk1.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "walk2":
                 original_image = pg.image.load(
                     "assets/images/nooblet/nooblet_walk2.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "sword1":
                 original_image = pg.image.load(
                     "assets/images/nooblet/nooblet_sword1.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "sword2":
                 original_image = pg.image.load(
                     "assets/images/nooblet/nooblet_sword2.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
         elif self.enemy_type == "noobador":
             if which_animation_en == "idle":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_idle.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "walk1":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_walk1.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "walk2":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_walk2.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "punch1":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_punch1.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "punch2":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_punch2.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "slam1":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_slam1.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "slam2":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_slam2.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "cure1":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_cure1.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
             elif which_animation_en == "cure2":
                 original_image = pg.image.load(
                     "assets/images/noobador/noobador_cure2.png").convert_alpha()
-                self.image = pg.transform.rotozoom(original_image, 0, 3.5)
+                self.image = pg.transform.scale_by(original_image, 3.5)
                 self.rect = self.image.get_rect(midbottom=(self.x, self.y))
                 screen.blit(self.image, self.rect)
 
@@ -402,11 +402,11 @@ super_type = "Wait"
 super_wait_time = random.randint(2000, 5000)
 
 wait_ind_img = pg.image.load("assets/images/ui/Wait_indicator.png").convert_alpha()
-wait_ind_img_con = pg.transform.rotozoom(wait_ind_img, 0, 3)
+wait_ind_img_con = pg.transform.scale_by(wait_ind_img, 3)
 wait_ind_rect = wait_ind_img_con.get_rect(center=(500, 350))
 
 go_ind_img = pg.image.load("assets/images/ui/Go_indicator.png").convert_alpha()
-go_ind_img_con = pg.transform.rotozoom(go_ind_img, 0, 3)
+go_ind_img_con = pg.transform.scale_by(go_ind_img, 3)
 go_ind_rect = wait_ind_img_con.get_rect(center=(500, 350))
 
 battle_state = "player_turn_action"
@@ -446,25 +446,13 @@ title_text1 = font_big.render("2D!", False, (77, 101, 180))
 title_text2 = font_big.render("click to play", False, (77, 101, 180))
 tit_t_rect1 = title_text1.get_rect(center=(800, 100))
 tit_t_rect2 = title_text2.get_rect(center=(500, 500))
-tut_text1 = font_small.render(
-    "In this game you will take turns to defeat your opponent.", False, (77, 101, 180))
-tut_text2 = font_small.render(
-    "There is difrent buttons you can use", False, (77, 101, 180))
-tut_text3 = font_small.render(
-    "With the sword you need to click it two times(when its green),to deal more damage", False, (77, 101, 180))
-tut_rect1 = tut_text1.get_rect(center=(700, 30))
-tut_rect2 = tut_text2.get_rect(center=(630, 80))
-tut_rect3 = tut_text3.get_rect(center=(640, 130))
-bttl_text1 = font_small.render(
-    "When you attack click an enemy to select it", False, (77, 101, 180))
-bttl_rect1 = bttl_text1.get_rect(center=(640, 180))
 won_text1 = font_big.render("YOU WON!", False, (77, 101, 180))
 won_t_rect1 = won_text1.get_rect(center=(500, 350))
 lost_text1 = font_big.render("You lost", False, (77, 101, 180))
 lost_t_rect1 = lost_text1.get_rect(center=(500, 350))
 title_image = pg.image.load("assets/images/ui/title.png")                   # images
-title_image_scale = pg.transform.scale(
-    title_image, (title_image.get_width()*1.5, title_image.get_height()*1.5))
+title_image_scale = pg.transform.scale_by(
+    title_image, 1.5)
 title_i_rect = title_image.get_rect(center=(375, 125))
 tutorial_button = pg.image.load("assets/images/ui/Tutorial_button.png")
 tut_b_scaled = pg.transform.scale(
@@ -475,19 +463,19 @@ bttl_b_scaled = pg.transform.scale(
 tut_b_rect = tut_b_scaled.get_rect(center=(200, 300))
 bttl_b_rect = bttl_b_scaled.get_rect(center=(750, 300))
 stab_image = pg.image.load("assets/images/ui/stab_button.png").convert_alpha()
-stab_i = pg.transform.rotozoom(stab_image, 0, 2)
+stab_i = pg.transform.scale_by(stab_image, 2)
 stb_rect = stab_i.get_rect(topleft=(0, 0))
 pwr_stb_image = pg.image.load("assets/images/ui/power_stab_b.png").convert_alpha()
-pwr_stb_i = pg.transform.rotozoom(pwr_stb_image, 0, 2)
+pwr_stb_i = pg.transform.scale_by(pwr_stb_image, 2)
 pwr_stb_rect = pwr_stb_i.get_rect(topleft=(80, 0))
 cure_image = pg.image.load("assets/images/ui/cure_button.png").convert_alpha()
-cure_i = pg.transform.rotozoom(cure_image, 0, 2)
+cure_i = pg.transform.scale_by(cure_image, 2)
 cure_rect = cure_i.get_rect(topleft=(160, 0))
 exit_image = pg.image.load("assets/images/ui/exit_button.png").convert_alpha()
-exit_i = pg.transform.rotozoom(exit_image, 0, 2)
+exit_i = pg.transform.scale_by(exit_image, 2)
 exit_rect = exit_i.get_rect(topright=(1000, 0))
 pass_image = pg.image.load("assets/images/ui/pass_button.png").convert_alpha()
-pass_i = pg.transform.rotozoom(pass_image, 0, 2)
+pass_i = pg.transform.scale_by(pass_image, 2)
 pass_rect = pass_i.get_rect(topleft=(240, 0))
 background = pg.image.load("assets/images/ui/Background.png")
 bckgr_scale = pg.transform.scale(
