@@ -1,203 +1,9 @@
 import random
 import time
 import pygame as pg
+from player import Player
 
 
-class Player(pg.sprite.Sprite):
-    def __init__(self, x, y, health, max_health, stamina, max_stamina):
-        super().__init__()
-        global font_small
-        global font
-        global font_big
-        global which_animation_pl
-
-        self.x = x
-        self.y = y
-        original_image = pg.image.load(
-            "assets/images/player/player_idle.png").convert_alpha()
-        self.image = pg.transform.scale_by(original_image, 3.5)
-        self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-
-        self.health = health
-        self.max_health = max_health
-        self.stamina = stamina
-        self.max_stamina = max_stamina
-
-    def drawing_animation(self):
-        if which_animation_pl == "idle":
-            original_image = pg.image.load(
-                "assets/images/player/player_idle.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "cure1":
-            original_image = pg.image.load(
-                "assets/images/player/player_cure1.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "cure2":
-            original_image = pg.image.load(
-                "assets/images/player/player_cure2.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "pass1":
-            original_image = pg.image.load(
-                "assets/images/player/player_pass1.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "pass2":
-            original_image = pg.image.load(
-                "assets/images/player/player_pass2.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "walk1":
-            original_image = pg.image.load(
-                "assets/images/player/player_walk1.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "walk2":
-            original_image = pg.image.load(
-                "assets/images/player/player_walk2.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "sword1":
-            original_image = pg.image.load(
-                "assets/images/player/player_sword1.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-        elif which_animation_pl == "sword2":
-            original_image = pg.image.load(
-                "assets/images/player/player_sword2.png").convert_alpha()
-            self.image = pg.transform.scale_by(original_image, 3.5)
-            self.rect = self.image.get_rect(midbottom=(self.x, self.y))
-            screen.blit(self.image, self.rect)
-
-    def health_and_stamina_back(self):
-        self.health = self.max_health
-        self.stamina = self.max_stamina
-
-    def pwr_stb(self):
-        self.stamina -= 1
-        print(self.stamina)
-
-    def nooblet_dmg(self):
-        self.health -= 1
-        print(self.health)
-
-    def noobador_slam(self):
-        self.health -= 4
-        print(self.health)
-
-    def noobador_punch(self):
-        self.health -= 3
-
-    def cure(self):
-        self.stamina -= 2
-        self.health += 5
-
-    def pass_(self):
-        self.stamina += 2
-
-    def cheezeburger(self):  # gonna add this later
-        chezeburger = 1
-        if chezeburger > 0:
-            chezeburger -= 1
-            self.health += 8
-            return True
-        else:
-            return False
-
-    def bloxy_cola(self):
-        bloxy_cola = 1
-        if bloxy_cola > 0:
-            bloxy_cola -= 1
-            self.stamina += 5
-            return True
-        else:
-            return False
-
-    def too_much_hp_sp(self):
-        if self.health > self.max_health:
-            self.health = self.max_health
-        if self.stamina > self.max_stamina:
-            self.stamina = self.max_stamina
-
-    def too_low_sp(self):
-        if self.stamina < 0:
-            self.stamina = 0
-
-    def drawing_hp_sp(self):
-        str_health = str(self.health)
-        str_stamina = str(self.stamina)
-        str_max_health = str(self.max_health)
-        str_max_stamina = str(self.max_stamina)
-
-        hp_sp_text_current = f"{str_health} HP / {str_stamina} SP"
-        hp_sp_info_max = font_small.render(
-            hp_sp_text_current, False, (77, 101, 180))
-        hp_sp_i_rect_max = hp_sp_info_max.get_rect(
-            midbottom=(self.x, self.y + 25))
-        hp_sp_text = f"{str_max_health} HP MAX / {str_max_stamina} SP MAX"
-        hp_sp_info = font_small.render(hp_sp_text, False, (77, 101, 180))
-        hp_sp_i_rect = hp_sp_info.get_rect(midbottom=(self.x, self.y + 50))
-
-        screen.blit(hp_sp_info, hp_sp_i_rect)
-        screen.blit(hp_sp_info_max, hp_sp_i_rect_max)
-
-    def has_enough_sp(self):
-        if self.stamina > 0:
-            return True
-        else:
-            return False
-
-    def has_enough_sp2(self):
-        if self.stamina > 1:
-            return True
-        else:
-            return False
-
-    def if_not_dead(self):
-        if self.health > 0:
-            return True
-        else:
-            self.health = 0
-            return False
-
-    def go_back(self):
-        self.x -= 50
-        if self.x >= 140:
-            return True
-        else:
-            return False
-
-    def is_close_to_forth(self):
-        self.x += 50
-        if self.x <= 840:
-            return True
-        else:
-            return False
-
-    def is_close_to_third(self):
-        self.x += 50
-        if self.x <= 690:
-            return True
-        else:
-            return False
 
 
 class Enemy(pg.sprite.Sprite):
@@ -395,7 +201,7 @@ battle_state = "enemy_turn"  # AI moves
 player_turn_actions = 0
 player_actions_per_turn = 2  # Number of actions the player can take
 
-which_animation_pl = "idle"
+which_animation_pl  = "idle"
 which_animation_en = "idle"
 
 super_type = "Wait"
@@ -594,7 +400,7 @@ while running:
         if not tutorial_music_playing:
             tutorial_music.play(-1)
             tutorial_music_playing = True
-        which_animation_pl = "idle"
+        player_.sprite.which_animation_pl  = "idle"
         screen.blit(bckgr_scale, bckgr_rect)
         screen.blit(stab_i, stb_rect)
         screen.blit(pwr_stb_i, pwr_stb_rect)
@@ -646,12 +452,12 @@ while running:
 
                         elif cure_rect.collidepoint(event.pos):
                             if player.has_enough_sp2():
-                                which_animation_pl = "cure1"
+                                player_.sprite.which_animation_pl  = "cure1"
                                 screen.blit(bckgr_scale, bckgr_rect)
                                 player.drawing_animation()
                                 pg.display.update()
                                 pg.time.wait(250)
-                                which_animation_pl = "cure2"
+                                player_.sprite.which_animation_pl  = "cure2"
                                 screen.blit(bckgr_scale, bckgr_rect)
                                 player.drawing_animation()
                                 pg.display.update()
@@ -664,12 +470,12 @@ while running:
                                     battle_state = "player_turn_action"
 
                         elif pass_rect.collidepoint(event.pos):
-                            which_animation_pl = "pass1"
+                            player_.sprite.which_animation_pl  = "pass1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(250)
-                            which_animation_pl = "pass2"
+                            player_.sprite.which_animation_pl  = "pass2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             player.drawing_animation()
                             pg.display.update()
@@ -744,38 +550,38 @@ while running:
                         battle_state = "player_turn_action"
                     if selected_enemy == nooblet1:
                         while player.is_close_to_forth():
-                            which_animation_pl = "walk1"
+                            player_.sprite.which_animation_pl  = "walk1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet1.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                            which_animation_pl = "walk2"
+                            player_.sprite.which_animation_pl  = "walk2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet1.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                        which_animation_pl = "sword1"
+                        player_.sprite.which_animation_pl  = "sword1"
                         screen.blit(bckgr_scale, bckgr_rect)
                         nooblet1.drawing_self()
                         player.drawing_animation()
                         pg.display.update()
                         pg.time.wait(250)
-                        which_animation_pl = "sword2"
+                        player_.sprite.which_animation_pl  = "sword2"
                         screen.blit(bckgr_scale, bckgr_rect)
                         nooblet1.drawing_self()
                         player.drawing_animation()
                         pg.display.update()
                         pg.time.wait(250)
                         while player.go_back():
-                            which_animation_pl = "walk1"
+                            player_.sprite.which_animation_pl  = "walk1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet1.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                            which_animation_pl = "walk2"
+                            player_.sprite.which_animation_pl  = "walk2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet1.drawing_self()
                             player.drawing_animation()
@@ -798,7 +604,7 @@ while running:
                         selected_enemy = None
                         super_timer_started = False
                         super_wait_time = random.randint(2000, 5000)
-                        which_animation_pl = "idle"
+                        player_.sprite.which_animation_pl  = "idle"
 
                         # Always count the action
                         player_turn_actions += 1
@@ -808,7 +614,7 @@ while running:
                             battle_state = "player_turn_action"
             if battle_state == "enemy_turn":
                 # Only execute once
-                which_animation_pl = "idle"
+                player.layer.which_animation_pl = "idle"
                 if nooblet1.if_not_dead():
                     while nooblet1.go_to_player():
                         which_animation_en = "walk1"
@@ -868,7 +674,7 @@ while running:
         if not battle_music_playing:
             battle_music.play(-1)
             battle_music_playing = True
-        which_animation_pl = "idle"
+        player_.sprite.which_animation_pl  = "idle"
         screen.blit(bckgr_scale, bckgr_rect)
         screen.blit(stab_i, stb_rect)
         screen.blit(pwr_stb_i, pwr_stb_rect)
@@ -919,12 +725,12 @@ while running:
 
                         elif cure_rect.collidepoint(event.pos):
                             if player.has_enough_sp2():
-                                which_animation_pl = "cure1"
+                                player_.sprite.which_animation_pl  = "cure1"
                                 screen.blit(bckgr_scale, bckgr_rect)
                                 player.drawing_animation()
                                 pg.display.update()
                                 pg.time.wait(250)
-                                which_animation_pl = "cure2"
+                                player_.sprite.which_animation_pl  = "cure2"
                                 screen.blit(bckgr_scale, bckgr_rect)
                                 player.drawing_animation()
                                 pg.display.update()
@@ -937,12 +743,12 @@ while running:
                                     battle_state = "player_turn_action"
 
                         elif pass_rect.collidepoint(event.pos):
-                            which_animation_pl = "pass1"
+                            player_.sprite.which_animation_pl  = "pass1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(250)
-                            which_animation_pl = "pass2"
+                            player_.sprite.which_animation_pl  = "pass2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             player.drawing_animation()
                             pg.display.update()
@@ -1024,38 +830,38 @@ while running:
                         else:
                             good_sfx.play()
                         while player.is_close_to_third():
-                            which_animation_pl = "walk1"
+                            player_.sprite.which_animation_pl  = "walk1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet2.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                            which_animation_pl = "walk2"
+                            player_.sprite.which_animation_pl  = "walk2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet2.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                        which_animation_pl = "sword1"
+                        player_.sprite.which_animation_pl  = "sword1"
                         screen.blit(bckgr_scale, bckgr_rect)
                         nooblet2.drawing_self()
                         player.drawing_animation()
                         pg.display.update()
                         pg.time.wait(250)
-                        which_animation_pl = "sword2"
+                        player_.sprite.which_animation_pl  = "sword2"
                         screen.blit(bckgr_scale, bckgr_rect)
                         nooblet2.drawing_self()
                         player.drawing_animation()
                         pg.display.update()
                         pg.time.wait(250)
                         while player.go_back():
-                            which_animation_pl = "walk1"
+                            player_.sprite.which_animation_pl  = "walk1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet2.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                            which_animation_pl = "walk2"
+                            player_.sprite.which_animation_pl  = "walk2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             nooblet2.drawing_self()
                             player.drawing_animation()
@@ -1100,38 +906,38 @@ while running:
                         else:
                             good_sfx.play()
                         while player.is_close_to_forth():
-                            which_animation_pl = "walk1"
+                            player_.sprite.which_animation_pl  = "walk1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             noobador1.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                            which_animation_pl = "walk2"
+                            player_.sprite.which_animation_pl  = "walk2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             noobador1.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                        which_animation_pl = "sword1"
+                        player_.sprite.which_animation_pl  = "sword1"
                         screen.blit(bckgr_scale, bckgr_rect)
                         noobador1.drawing_self()
                         player.drawing_animation()
                         pg.display.update()
                         pg.time.wait(250)
-                        which_animation_pl = "sword2"
+                        player_.sprite.which_animation_pl  = "sword2"
                         screen.blit(bckgr_scale, bckgr_rect)
                         noobador1.drawing_self()
                         player.drawing_animation()
                         pg.display.update()
                         pg.time.wait(250)
                         while player.go_back():
-                            which_animation_pl = "walk1"
+                            player_.sprite.which_animation_pl  = "walk1"
                             screen.blit(bckgr_scale, bckgr_rect)
                             noobador1.drawing_self()
                             player.drawing_animation()
                             pg.display.update()
                             pg.time.wait(50)
-                            which_animation_pl = "walk2"
+                            player_.sprite.which_animation_pl  = "walk2"
                             screen.blit(bckgr_scale, bckgr_rect)
                             noobador1.drawing_self()
                             player.drawing_animation()
@@ -1175,7 +981,7 @@ while running:
 
             elif battle_state == "enemy_turn":
                 # Only execute once
-                which_animation_pl = "idle"
+                player_.sprite.which_animation_pl  = "idle"
                 if nooblet2.if_not_dead():
                     while nooblet2.go_to_player():
                         which_animation_en = "walk1"
